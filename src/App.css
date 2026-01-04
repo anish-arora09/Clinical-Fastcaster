@@ -1,0 +1,193 @@
+/* container for the entire app */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding-bottom: 100px; /* ensure space for the fixed button section */
+  background-color: #f8f9fa;
+}
+
+.projections-heading {
+  margin-top: 15px;
+  padding-left: 10px;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+
+.target-inputs-box {
+  position: absolute;
+  left: 10px; 
+  top: 70px;
+  width: 300px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 0.95em; 
+  min-height: 110px; 
+  max-height: 110px;
+}
+
+.target-inputs-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.target-inputs-label {
+  font-weight: bold;
+  margin-right: 10px;
+  width: 150px; 
+}
+
+.target-inputs-input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.react-datepicker__input-container {
+  width: 100%;
+}
+
+.react-datepicker__input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+.totals-box {
+  position: absolute;
+  right: 5px; 
+  top: 70px; 
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid #ddd;
+  padding: 9px;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 1.05em; 
+  min-height: 108px; 
+  max-height: 108px; 
+}
+
+.totals-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 7px 0;
+}
+
+.totals-label {
+  font-weight: bold;
+}
+
+.totals-value {
+  text-align: right;
+}
+
+
+/* style headers of input columns */
+.reactgrid .rg-header-cell:first-child, /* Region/Country */
+.reactgrid .rg-header-cell:nth-child(2), /* Enrollment Rate */
+.reactgrid .rg-header-cell:nth-child(3) /* #Sites */
+ {
+  background-color: #d0d0d0 !important; /* darker grey */
+}
+
+/* style gap column */
+.reactgrid .reactgrid-cell--gap {
+  background-color: #f8f9fa !important; /* make colour the same as the page colour so column appears invisible */
+  border: none !important; 
+  border-right: 1px solid #ddd !important; /* add right border */
+  box-shadow: none !important;
+}
+
+/* style header cell of the gap column */
+.reactgrid .reactgrid-cell--gap-header {
+  background-color: #f8f9fa !important; /* make colour the same as the page colour so column appears invisible */
+  border: none !important;
+  border-right: 1px solid #ddd !important; 
+  color: transparent !important; 
+  box-shadow: none !important;
+}
+
+/* style header of patient column */
+.reactgrid .rg-header-cell:nth-child(n+5) {
+  background-color: navy !important;
+  color: white !important;
+}
+
+/* style header of month columns */
+.reactgrid .rg-header-cell:nth-child(n+6) {
+  background-color: green !important;
+  color: white !important;
+}
+
+
+.table {
+  margin-top: 147px; 
+  padding-left: 10px;
+}
+
+
+.graph-container {
+  position: relative; 
+  width: 70%; 
+  display: flex;
+  justify-content: flex-start; /* align graph to the left */
+  margin-left: -13%; 
+  padding-top: 40px; 
+}
+
+.graph-container canvas {
+  max-width: 100%; 
+  height: 250px; 
+  width: 100%; 
+}
+
+
+.modify-projections {
+  position: fixed; /* keep buttons at the bottom of the screen when you scroll */
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #f8f9fa;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 -1px 5px rgba(0,0,0,0.1);
+}
+
+.modify-projections h2 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.modify-projections button {
+  padding: 8px 12px;
+  font-size: 1em;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* style a disabled button */
+.modify-projections button:disabled {
+  background-color: #6c757d; /* grey out button */
+  cursor: not-allowed; /* make cursor a blocked symbol when you hover over button */
+}
